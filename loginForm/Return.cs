@@ -78,9 +78,11 @@ namespace loginForm
                         try
                         {
                             // mark the borrowed item as returned
-                            SqlCommand cmd = new SqlCommand("UPDATE Borrowed SET Quantity = 0 WHERE BorrowedId = @BorrowedId", cn);
+                           // SqlCommand cmd = new SqlCommand("UPDATE Borrowed SET Quantity = 0 WHERE BorrowedId = @BorrowedId", cn);
+                            SqlCommand cmd = new SqlCommand("UPDATE Borrowed SET Quantity = Quantity - 1 WHERE BorrowedId = @BorrowedId", cn);
                             cmd.Transaction = transaction;
                             cmd.Parameters.AddWithValue("@BorrowedId", borrowedItemId);
+                            cmd.Parameters.AddWithValue("@Quantity", 1);
                             cmd.ExecuteNonQuery();
 
                             // insert record in ReturnItems table
@@ -97,10 +99,10 @@ namespace loginForm
                             cmd.ExecuteNonQuery();
 
                             // update quantity in Book table
-                            cmd = new SqlCommand("UPDATE Book SET Quantity = Quantity + @Quantity WHERE AccessionNumber = @AccessionNumber", cn);
+                            cmd = new SqlCommand("UPDATE Book SET Quantity = Quantity + 1 WHERE AccessionNumber = @AccessionNumber AND (Quantity + @Quantity) >= Quantity", cn);
                             cmd.Transaction = transaction;
                             cmd.Parameters.AddWithValue("@AccessionNumber", bookId);
-                            cmd.Parameters.AddWithValue("@Quantity", quantity);
+                            cmd.Parameters.AddWithValue("@Quantity", 1);
                             cmd.ExecuteNonQuery();
                             transaction.Commit();
 
@@ -118,7 +120,7 @@ namespace loginForm
                         {
                             cn.Close();
                         }
-                 }
+                    }
                 }
             }
         }
@@ -167,7 +169,7 @@ namespace loginForm
         private void LoadBooks()
         {
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mariloucantilado\source\repos\Loginform\loginForm\Database1.mdf;Integrated Security=True";
-            string query = "SELECT * FROM Book"; // SELECT query to retrieve all books
+            string query = "SELECT * FROM Book WHERE status = 'Available'"; // SELECT query to retrieve all books
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

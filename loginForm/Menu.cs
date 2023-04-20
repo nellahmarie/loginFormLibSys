@@ -78,5 +78,23 @@ namespace loginForm
         {
 
         }
+
+        private void borrowedDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateFilter borrowedDate = new DateFilter();
+            borrowedDate.Show();
+        }
+
+        private void returnedDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReturnedDate returned = new ReturnedDate();
+            returned.Show();
+        }
+
+        private void chartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart();
+            chart.Show();
+        }
     }
 }

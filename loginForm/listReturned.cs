@@ -33,7 +33,7 @@ namespace loginForm
             DGVPrinter printer = new DGVPrinter();
 
             printer.Title = "List of Returned Books Report";
-            printer.SubTitle = "An Easy to Use DataGridView Printing Object";
+           // printer.SubTitle = "An Easy to Use DataGridView Printing Object";
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = false;
             printer.PageNumberInHeader = false;
@@ -76,7 +76,7 @@ namespace loginForm
                                                  "FROM ReturnItems " +
                                                  "INNER JOIN Book ON ReturnItems.AccessionNumber = Book.AccessionNumber " +
                                                  "INNER JOIN Borrower ON ReturnItems.BorrowerId = Borrower.BorrowerId " +
-                                                 "ORDER BY BorrowDate ASC";  // SELECT query to retrieve all books
+                                                 "ORDER BY BorrowDate ASC";  // SELECT query to retrieve all returned books
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

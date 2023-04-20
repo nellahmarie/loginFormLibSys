@@ -117,6 +117,11 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(184, 438);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 44);
@@ -127,6 +132,11 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnEdit.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Location = new System.Drawing.Point(334, 438);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(123, 44);
@@ -137,6 +147,11 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Location = new System.Drawing.Point(495, 438);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(123, 44);
@@ -147,6 +162,11 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(637, 438);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(123, 44);
@@ -223,6 +243,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(265, 38);
             this.txtQuantity.TabIndex = 18;
+            this.txtQuantity.Text = "1";
             // 
             // label7
             // 

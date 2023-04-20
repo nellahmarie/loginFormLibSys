@@ -36,6 +36,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             this.Login.ForeColor = System.Drawing.Color.White;
             this.Login.Location = new System.Drawing.Point(134, 320);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(519, 75);
+            this.Login.Size = new System.Drawing.Size(538, 75);
             this.Login.TabIndex = 1;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = false;
@@ -67,7 +68,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(134, 483);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(519, 75);
+            this.button2.Size = new System.Drawing.Size(538, 75);
             this.button2.TabIndex = 2;
             this.button2.Text = "Sign-up";
             this.button2.UseVisualStyleBackColor = false;
@@ -122,12 +123,24 @@
             this.label4.Text = "Don\'t Have an Account?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(473, 585);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(199, 25);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Change Password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(800, 655);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -154,6 +167,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

@@ -37,7 +37,7 @@ namespace loginForm
                 string password = txtPassword.Text;
                 string username = txtUsername.Text;
 
-                SqlCommand cmd = new SqlCommand("SELECT username, password FROM LoginTable WHERE username = @username", cn);
+                SqlCommand cmd = new SqlCommand("SELECT username, password, userType FROM LoginTable WHERE username = @username", cn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
           
@@ -54,10 +54,22 @@ namespace loginForm
 
                         if (decryptedPassword == password)
                         {
-                            MessageBox.Show("Login successful!");
-                            this.Hide();
-                            Menu adminForm = new Menu();
-                            adminForm.ShowDialog();                           
+                            string userType = reader.GetString(2);
+                            if(userType == "Admin")
+                            {
+                                MessageBox.Show("Login successful!");
+                                this.Hide();
+                                Menu adminForm = new Menu();
+                                adminForm.ShowDialog();
+                            }
+                            else if(userType == "Borrower")
+                            {
+                                MessageBox.Show("Login successful!");
+                                this.Hide();
+                                HomeBorrower borrowerForm = new HomeBorrower();
+                                borrowerForm.ShowDialog();
+                            }
+                                                      
 
                         }
                         else
@@ -112,6 +124,12 @@ namespace loginForm
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            changePassword change = new changePassword();
+            change.Show();
         }
     }
 }

@@ -51,6 +51,11 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Location = new System.Drawing.Point(782, 600);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(220, 78);

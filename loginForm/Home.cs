@@ -154,19 +154,21 @@ namespace loginForm
                 MessageBox.Show("Select a record to Delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+          
+                // Check if there are any borrowed items for the book to be deleted
+                SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM Borrowed WHERE AccessionNumber = @AccessionNumber", cn);
+                cmdCheck.Parameters.AddWithValue("@AccessionNumber", txtno.Text);
 
-           // Check if there are any borrowed items for the book to be deleted
-            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM Borrowed WHERE AccessionNumber = @AccessionNumber", cn);
-            cmdCheck.Parameters.AddWithValue("@AccessionNumber", txtno.Text);
+                int count = (int)cmdCheck.ExecuteScalar();
 
-            int count = (int)cmdCheck.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("Cannot delete the book because there are borrowed items associated with it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            
 
-            if (count > 0)
-            {
-                MessageBox.Show("Cannot delete the book because there are borrowed items associated with it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+         
             
             DialogResult dr = MessageBox.Show("Are you sure you want to delete this?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dr == DialogResult.Yes)
@@ -195,8 +197,8 @@ namespace loginForm
             txtno.Clear();
             txtTitle.Clear();
             txtAuthor.Clear();
-            txtQuantity.Clear();
-            comboBox1.Text = "";
+           // txtQuantity.Clear();
+           // comboBox1.Text = "";
 
             cn.Close();
             loadDatagrid();

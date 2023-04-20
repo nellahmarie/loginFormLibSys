@@ -151,6 +151,13 @@
             // 
             // btnBorrow
             // 
+            this.btnBorrow.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnBorrow.FlatAppearance.BorderSize = 3;
+            this.btnBorrow.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnBorrow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnBorrow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrow.ForeColor = System.Drawing.Color.Black;
             this.btnBorrow.Location = new System.Drawing.Point(271, 947);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(134, 61);
@@ -161,6 +168,13 @@
             // 
             // btnClear
             // 
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnClear.FlatAppearance.BorderSize = 3;
+            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(436, 947);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(141, 61);
@@ -212,6 +226,13 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.Location = new System.Drawing.Point(596, 947);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(141, 61);

@@ -31,7 +31,6 @@ namespace loginForm
                                  "FROM Borrowed " +
                                  "INNER JOIN Book ON Borrowed.AccessionNumber = Book.AccessionNumber " +
                                  "INNER JOIN Borrower ON Borrowed.BorrowerId = Borrower.BorrowerId " +
-                                 "WHERE Borrowed.Quantity != 0 " +
                                  "ORDER BY BorrowDate ASC"; // SELECT query to retrieve all borrowed books
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -77,7 +76,7 @@ namespace loginForm
             DGVPrinter printer = new DGVPrinter();
 
             printer.Title = "List of Borrowed Books Report";
-            printer.SubTitle = "An Easy to Use DataGridView Printing Object";
+           // printer.SubTitle = "An Easy to Use DataGridView Printing Object";
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;

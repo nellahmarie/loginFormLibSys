@@ -62,7 +62,7 @@ namespace loginForm
                         }
                         else
                         {
-                           // type = comboBox1.SelectedItem.ToString();
+                            type = comboBox1.SelectedItem.ToString();
                             encryp = "";
 
                             foreach (char c in textpass.Text)
@@ -72,9 +72,10 @@ namespace loginForm
                                 encryp += (char)asciValue;
                             }
 
-                            SqlCommand cmd = new SqlCommand("INSERT INTO LoginTable (username, password) VALUES (@username, @userpassword)", cn);
+                            SqlCommand cmd = new SqlCommand("INSERT INTO LoginTable (username, password, userType) VALUES (@username, @userpassword, @userType)", cn);
                             cmd.Parameters.AddWithValue("@username", textuser.Text);
                             cmd.Parameters.AddWithValue("@userpassword", encryp);
+                            cmd.Parameters.AddWithValue("@userType", type);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Registration successful! Now click login");
                         }

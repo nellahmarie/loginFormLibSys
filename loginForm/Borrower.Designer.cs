@@ -126,6 +126,11 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(811, 74);
             this.btnAdd.Name = "btnAdd";
@@ -137,6 +142,11 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnUpdate.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(811, 142);
             this.btnUpdate.Name = "btnUpdate";
@@ -148,6 +158,11 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(811, 232);
             this.btnDelete.Name = "btnDelete";
@@ -222,6 +237,11 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(811, 314);
             this.button1.Name = "button1";

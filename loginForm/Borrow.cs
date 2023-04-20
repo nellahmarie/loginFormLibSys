@@ -166,7 +166,7 @@ namespace loginForm
                 try
                 {
 
-                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Borrowed WHERE AccessionNumber = @AccessionNumber AND BorrowerId = @BorrowerId", cn);
+                   /* SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Borrowed WHERE AccessionNumber = @AccessionNumber AND BorrowerId = @BorrowerId", cn);
                     cmd.Transaction = transaction;
                     cmd.Parameters.AddWithValue("@AccessionNumber", bookId);
                     cmd.Parameters.AddWithValue("@BorrowerId", borrowerId);
@@ -175,7 +175,7 @@ namespace loginForm
                     {
                         MessageBox.Show("You already borrowed this book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
-                    }
+                    }*/
                     // insert record in Borrowed table
                     DateTime currentDate = DateTime.Now;
                     DateTime returnDate = dateTimePicker1.Value;
@@ -198,7 +198,7 @@ namespace loginForm
                     else if (daysLeft == 7)
                     {
                         // Allow book to be borrowed
-                        cmd = new SqlCommand("INSERT INTO Borrowed (AccessionNumber, BorrowerId, Quantity, ReturnDate, BorrowDate) SELECT @AccessionNumber, @BorrowerId, @Quantity, @ReturnDate, @BorrowDate", cn);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Borrowed (AccessionNumber, BorrowerId, Quantity, ReturnDate, BorrowDate) SELECT @AccessionNumber, @BorrowerId, @Quantity, @ReturnDate, @BorrowDate", cn);
                         cmd.Transaction = transaction;
                         cmd.Parameters.AddWithValue("@AccessionNumber", bookId);
                         cmd.Parameters.AddWithValue("@BorrowerId", borrowerId);
@@ -221,7 +221,7 @@ namespace loginForm
                     }
                     else
                     {
-                        cmd = new SqlCommand("INSERT INTO Borrowed (AccessionNumber, BorrowerId, Quantity, ReturnDate, BorrowDate) SELECT @AccessionNumber, @BorrowerId, @Quantity, @ReturnDate, @BorrowDate", cn);
+                      SqlCommand  cmd = new SqlCommand("INSERT INTO Borrowed (AccessionNumber, BorrowerId, Quantity, ReturnDate, BorrowDate) SELECT @AccessionNumber, @BorrowerId, @Quantity, @ReturnDate, @BorrowDate", cn);
                         cmd.Transaction = transaction;
                         cmd.Parameters.AddWithValue("@AccessionNumber", bookId);
                         cmd.Parameters.AddWithValue("@BorrowerId", borrowerId);

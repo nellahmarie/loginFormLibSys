@@ -85,7 +85,7 @@ namespace loginForm
         {
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mariloucantilado\source\repos\LoginForm\loginForm\Database1.mdf;Integrated Security=True");
             cn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Borrower where status != 'Lost' ORDER BY BorrowerId ASC", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Borrower ORDER BY BorrowerId ASC", cn);
 
             cmd.ExecuteNonQuery();
 
@@ -160,17 +160,19 @@ namespace loginForm
                 return;
             }
 
-            // Check if there are any borrowed items for the book to be deleted
-            SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM Borrower WHERE BorrowerId = @BorrowerId", cn);
-            cmdCheck.Parameters.AddWithValue("@BorrowerId", txtBorrowerId.Text);
+            /*// Check if there are any borrowed items for the book to be deleted
+                SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM Borrower WHERE BorrowerId = @BorrowerId", cn);
+                cmdCheck.Parameters.AddWithValue("@BorrowerId", txtBorrowerId.Text);
 
-            int count = (int)cmdCheck.ExecuteScalar();
+                int count = (int)cmdCheck.ExecuteScalar();
 
-            if (count > 0)
-            {
-                MessageBox.Show("Cannot delete this borrower because there are borrowed items associated with it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (count > 0)
+                {
+                    MessageBox.Show("Cannot delete this borrower because there are borrowed items associated with it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }*/
+
+
             
             DialogResult dr = MessageBox.Show("Are you sure you want to delete this?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
@@ -184,7 +186,6 @@ namespace loginForm
             else
             {
                 MessageBox.Show("Cancelled!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             cn.Close();
             loadDatagrid();
