@@ -98,7 +98,7 @@ namespace loginForm
             using (SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mariloucantilado\source\repos\Loginform\loginForm\Database1.mdf;Integrated Security=True"))
             {
                 cn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT BorrowerId, FirstName, LastName, Address, Age, Phone, status FROM Borrower WHERE status = 'Active' ORDER BY BorrowerId ASC", cn);
+                SqlCommand cmd = new SqlCommand("SELECT BorrowerId, FirstName, LastName, Address, Age, Phone, status, userType FROM Borrower WHERE status = 'Active' AND userType = 'Borrower' ORDER BY BorrowerId ASC", cn);
                 SqlDataAdapter adap = new SqlDataAdapter(cmd);
                 DataTable tab = new DataTable();
                 adap.Fill(tab);
